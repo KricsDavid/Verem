@@ -32,7 +32,7 @@ namespace Verem
                 return; 
 
             if (count == capacity)
-                throw new InvalidOperationException("A halmaz megtelt");
+                throw new Exception("A halmaz megtelt");
 
             elements[count++] = elem;
         }
@@ -41,7 +41,7 @@ namespace Verem
         {
             int index = IndexOf(elem);
             if (index == -1)
-                throw new InvalidOperationException("Ilyen elemet nem tartalmaz a halmaz");
+                throw new Exception("Ilyen elemet nem tartalmaz a halmaz");
 
             
             for (int i = index; i < count - 1; i++)
