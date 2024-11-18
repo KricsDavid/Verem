@@ -26,13 +26,13 @@ namespace Verem
             this.count = 0;
         }
 
-        public void Add(double elem)
+        public void Push(double elem)
         {
             if (Contains(elem))
                 return; 
 
             if (count == capacity)
-                throw new InvalidOperationException("The set is full.");
+                throw new InvalidOperationException("A halmaz megtelt");
 
             elements[count++] = elem;
         }
@@ -41,7 +41,7 @@ namespace Verem
         {
             int index = IndexOf(elem);
             if (index == -1)
-                throw new InvalidOperationException("Element not found in the set.");
+                throw new InvalidOperationException("Ilyen elemet nem tartalmaz a halmaz");
 
             
             for (int i = index; i < count - 1; i++)
